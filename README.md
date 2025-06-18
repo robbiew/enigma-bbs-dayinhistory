@@ -2,7 +2,7 @@
 [![ENiGMA½ Version](https://img.shields.io/badge/enigma-1%2F2-brightgreen.svg)](https://github.com/NuSkooler/enigma-bbs)
 
 # Day in History - ENiGMA½ Module
-![Day in History Screenshot](assets/screenshot.png)
+![Day in History Screenshot](assets/screenshot1.png)
 
 A feature-rich ENiGMA½ BBS module that displays historical events that occurred on the current day, with multiple variety strategies for event selection. The inspiration, and design, comes from Smooth of PHEN0M, who originally created this as a Mystic BBS mod. I've re-worked this concept as an ENiGMA½ Module, adapting the data source to Wikimedia's API.
 

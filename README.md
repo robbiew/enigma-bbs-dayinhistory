@@ -218,9 +218,7 @@ Randomly selects events from all available options for the current day.
 - Dynamic event fitting based on screen space
 - Word wrapping with proper text alignment
 - Real-time data from Wikimedia API
-- Strategy indication in footer display
 - Command-based strategy detection system
-- Conservative screen layout to prevent overflow
 
 ## License
 

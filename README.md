@@ -61,74 +61,23 @@ Add these entries to the `[menuName].hjson` file of your choice (you can use one
 In your menu, add command mappings to match any Menu Entries used:
 
 ```hjson
-"dayInHistoryEra": {
-  "desc": "Day in History - Era Based",
-  "module": "@userModule:ja_day_in_history",
-  "extraArgs": {
-    "varietyStrategy": "era-based",
-    "minYear": 1,
-    "excludeBirthsDeaths": true,
-    "eras": [
-      {
-        "name": "Ancient",
-        "min": 1,
-        "max": 500,
-        "quota": 1
-      },
-      {
-        "name": "Medieval",
-        "min": 501,
-        "max": 1500,
-        "quota": 1
-      },
-      {
-        "name": "Early Modern",
-        "min": 1501,
-        "max": 1800,
-        "quota": 1
-      },
-      {
-        "name": "Modern",
-        "min": 1801,
-        "max": 1950,
-        "quota": 1
-      },
-      {
-        "name": "Contemporary",
-        "min": 1951,
-        "max": 2030,
-        "quota": 1
-      }
-    ]
-  }
-},
-"dayInHistoryOldest": {
-  "desc": "Day in History - Ancient Focus",
-  "module": "@userModule:ja_day_in_history",
-  "extraArgs": {
-    "varietyStrategy": "oldest-first",
-    "minYear": 1,
-    "excludeBirthsDeaths": true
-  }
-},
-"dayInHistoryBalanced": {
-  "desc": "Day in History - Source Balanced",
-  "module": "@userModule:ja_day_in_history",
-  "extraArgs": {
-    "varietyStrategy": "source-balanced",
-    "minYear": 1,
-    "excludeBirthsDeaths": true
-  }
-},
-"dayInHistoryRandom": {
-  "desc": "Day in History - Random",
-  "module": "@userModule:ja_day_in_history",
-  "extraArgs": {
-    "varietyStrategy": "random",
-    "minYear": 1,
-    "excludeBirthsDeaths": true
-  }
-}
+    "dayInHistoryEra": {
+      "desc": "Day in History - Era Based",
+      "module": "@userModule:ja_day_in_history"
+    },
+    "dayInHistoryOldest": {
+      "desc": "Day in History - Ancient Focus",
+      "module": "@userModule:ja_day_in_history"
+    },
+    "dayInHistoryBalanced": {
+      "desc": "Day in History - Source Balanced",
+      "module": "@userModule:ja_day_in_history"
+    },
+    "dayInHistoryRandom": {
+      "desc": "Day in History - Random",
+      "module": "@userModule:ja_day_in_history"
+    },
+
 ```
 
 ### 5. Restart ENiGMA½

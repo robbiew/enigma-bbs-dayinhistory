@@ -48,7 +48,6 @@ exports.getModule = class DayInHistoryModule extends MenuModule {
             minYear: 1,
             maxYear: 2030,
             excludeBirthsDeaths: true,
-            debugVariety: false,
             eras: [
                 { name: 'Ancient', min: 1, max: 500, quota: 1 },
                 { name: 'Medieval', min: 501, max: 1500, quota: 1 },
@@ -110,10 +109,10 @@ exports.getModule = class DayInHistoryModule extends MenuModule {
             return "th";
         };
         
-        // Clear screen and move cursor to home
+        // Clear screen and move cursor to home - exact Go version
         this.client.term.write('\x1B[2J\x1B[H');
         
-        // Header 
+        // Header with EXACT Go formatting
         this.client.term.write('\r\n \x1B[30;1m\x1B[0m-\x1B[36m---\x1B[32;1m-\x1B[0m\x1B[36m--\x1B[32;1m-\x1B[0m\x1B[36m-\x1B[32;1m--------- ------------------------------------ ------ -- -  \x1B[0m\r\n');
         
         this.client.term.write(' \x1B[42m\x1B[37;1m>> \x1B[32;1mGlimpse In Time v1  \x1B[0m\x1B[42m\x1B[30m>>\x1B[40m\x1B[32m>>  \x1B[0m\x1B[37;1m\x1B[36;1mENiGMA mod inspired by Smooth \x1B[0m\x1B[36m<\x1B[37;1mPHEN0M\x1B[0m\x1B[36m>\x1B[0m\r\n');
@@ -188,11 +187,11 @@ exports.getModule = class DayInHistoryModule extends MenuModule {
 
     displayPause(cb) {
         const self = this;
-        // Display the pause message on row 24
+        // Display the exact Go version pause message on row 24
         this.client.term.write('\x1B[24;1H');
         this.client.term.write('                   \x1B[46m\x1B[37;1m<\x1B[0m\x1B[36m<  \x1B[30;1m... \x1B[0m\x1B[37mpress \x1B[37;1mANY KEY \x1B[0m\x1B[37mto \x1B[37;1mCONTINUE \x1B[0m\x1B[30;1m... \x1B[0m\x1B[36m>\x1B[44m\x1B[37;1m>\x1B[0m');
         
-        // Wait for any key press and then go to previous menu 
+        // Wait for any key press and then go to previous menu (no double pause)
         this.client.once('key press', (ch, key) => {
             self.prevMenu();
         });
@@ -418,7 +417,7 @@ exports.getModule = class DayInHistoryModule extends MenuModule {
         const month = now.toLocaleString('default', { month: 'long' });
         const year = now.getFullYear();
         
-        // Get ordinal ending (st, nd, rd, th) 
+        // Get ordinal ending (st, nd, rd, th) - matching Go version logic
         const getNumEnding = (day) => {
             if (day === 1 || (day % 10 === 1 && day !== 11)) return "st";
             if (day === 2 || (day % 10 === 2 && day !== 12)) return "nd";
@@ -437,7 +436,7 @@ exports.getModule = class DayInHistoryModule extends MenuModule {
         
         this.client.term.write(' \x1B[30;1m-\x1B[0m\x1B[36m--\x1B[32;1m--\x1B[0m\x1B[36m---\x1B[32;1m-\x1B[0m\x1B[36m-\x1B[32;1m--\x1B[0m\x1B[36m--\x1B[32;1m-\x1B[0m\x1B[36m---\x1B[32;1m--- ---------------------------- ------ -- -  \x1B[0m\r\n');
         
-        // Position cursor at row 8, column 1 for events display 
+        // Position cursor at row 8, column 1 for events display (matching Go version)
         this.client.term.write('\x1B[8;1H');
         
         // Calculate dynamic display limits - pause is on row 24, footer ends on row 23
@@ -445,7 +444,7 @@ exports.getModule = class DayInHistoryModule extends MenuModule {
         let yPos = 8;
         let eventsDisplayed = 0;
         
-        // Get current time for footer 
+        // Get current time for footer - matching Go version
         const currentTime = now.toLocaleTimeString([], { 
             hour: 'numeric', 
             minute: '2-digit',
@@ -505,7 +504,7 @@ exports.getModule = class DayInHistoryModule extends MenuModule {
         this.client.term.write('\x1B[20;1H');
         this.client.term.write(' \x1B[30;1m-\x1B[0m\x1B[36m---\x1B[32;1m-\x1B[0m\x1B[36m--\x1B[32;1m-\x1B[0m\x1B[36m-\x1B[32;1m-----\x1B[0m\x1B[36m-\x1B[32;1m--------------------------------------- ---  --- -- -  \x1B[0m\r\n');
         
-        // Include strategy in footer 
+        // Include strategy in footer like previous versions - show ACTUAL strategy used
         const strategyDisplay = ` \x1B[36m(${this.config.varietyStrategy})\x1B[0m`;
         
         this.client.term.write(` \x1B[41m\x1B[30m>>\x1B[40m \x1B[37;1mGenerated on ${month} ${day}, ${year} at ${currentTime}${strategyDisplay}\x1B[0m\r\n`);
